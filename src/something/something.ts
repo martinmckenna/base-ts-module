@@ -1,2 +1,1 @@
-export const doSomething = () => ''
-
+export const doSomething = () => '';
