@@ -2,10 +2,6 @@
   "name": "my-package",
   "version": "0.0.1",
   "homepage": "",
-  "bugs": {
-    "url": "",
-    "email": ""
-  },
   "repository": {
     "type": "git",
     "directory": ""
@@ -28,8 +24,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "typecheck": "tsc --noEmit true --emitDeclarationOnly false",
-    "prepublishOnly": "yarn lint && yarn typecheck && yarn format && yarn build",
-    "precommit": "lint-staged && yarn typecheck"
+    "prepublishOnly": "yarn lint && yarn typecheck && yarn format && yarn build"
   },
   "files": [
     "index.js",
@@ -67,7 +62,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn precommit"
+      "pre-commit": "lint-staged && yarn typecheck"
     }
   },
   "lint-staged": {
