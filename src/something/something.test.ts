@@ -1,6 +1,6 @@
-import { doSomething } from './something'
+import { doSomething } from 'src/something';
 
 it('should do the thing', () => {
-  expect(doSomething()).toBe('')
-  expect(doSomething()).not.toBe('fdsfdsaf')
+  expect(doSomething()).toBe('');
+  expect(doSomething()).not.toBe('fdsfdsaf');
 });
