@@ -16,7 +16,9 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "unpkg": "./index.js",
-  "dependencies": {},
+  "dependencies": {
+    "handlebars": "^4.4.3"
+  },
   "scripts": {
     "start": "concurrently \"tsc -w\" \"babel src --watch --out-dir lib --extensions '.ts,.tsx'\" \"webpack --watch --config webpack.dev.config.js\" -n 'tsc,babel,webpack' -k",
     "build": "tsc && babel src --out-dir lib --extensions '.ts,.tsx' && webpack",

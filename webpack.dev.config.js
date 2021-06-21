@@ -11,7 +11,8 @@ module.exports = {
     libraryTarget: 'umd'
   },
   devServer: {
-    contentBase: './lib'
+    contentBase: './lib',
+    port: 8000
   },
   devtool: 'inline-source-map',
   plugins: [

@@ -9,6 +9,7 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+  "ignorePatterns": ["webpack.*.js"],
   "rules": {
     "no-console": 1
   }

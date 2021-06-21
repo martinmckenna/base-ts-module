@@ -1,5 +1,5 @@
 const path = require('path');
-const NpmDtsPlugin = require('npm-dts-webpack-plugin')
+const NpmDtsPlugin = require('npm-dts-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -15,4 +15,4 @@ module.exports = {
       logLevel: 'warn'
     })
   ]
-}
+};
