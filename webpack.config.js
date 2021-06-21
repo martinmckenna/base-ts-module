@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname),
-    library: 'my-lib',
+    library: 'base-module',
     libraryTarget: 'umd'
   },
   plugins: [

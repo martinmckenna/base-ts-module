@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname),
-    library: 'linode-js-sdk',
+    library: 'base-module',
     libraryTarget: 'umd'
   },
   devServer: {
