@@ -7,7 +7,7 @@
     "directory": ""
   },
   "engines": {
-    "node": ">= 10.16.0"
+    "node": ">= 16.3.0"
   },
   "description": "",
   "author": "",

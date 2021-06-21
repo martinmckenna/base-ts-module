@@ -1,4 +1,4 @@
-import { doSomething } from 'src/something';
+import { doSomething } from './something';
 
 it('should do the thing', () => {
   expect(doSomething()).toBe('');
