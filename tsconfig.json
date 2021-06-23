@@ -4,7 +4,7 @@
     "module": "umd",
     "emitDeclarationOnly": true,
     "declaration": true,
-    "outDir": "./dist/lib",
+    "outDir": "./dist",
     "allowJs": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
@@ -23,6 +23,5 @@
     "**/__tests__/*",
     "**/*.test.ts",
     "**/*.spec.ts",
-    "**/dist"
   ]
 }

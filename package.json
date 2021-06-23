@@ -13,15 +13,15 @@
   "author": "",
   "license": "MIT",
   "private": false,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "unpkg": "./dist/index.js",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "unpkg": "./index.js",
   "dependencies": {
     "handlebars": "^4.4.3"
   },
   "scripts": {
-    "start": "concurrently \"tsc -w\" \"babel src --watch --out-dir ./dist/lib --extensions '.ts,.tsx'\" \"webpack --watch --config webpack.dev.config.js\" -n 'tsc,babel,webpack' -k",
-    "build": "tsc && babel src --out-dir ./dist/lib --extensions '.ts,.tsx' && webpack",
+    "start": "concurrently \"tsc -w\" \"babel src --watch --out-dir ./dist --extensions '.ts,.tsx'\" \"webpack --watch --config webpack.dev.config.js\" -n 'tsc,babel,webpack' -k",
+    "build": "tsc && babel src --out-dir ./dist --extensions '.ts,.tsx' && webpack",
     "test": "jest --config jest.config.js",
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"src/**/*.js\"",
     "lint": "eslint . --ext '.ts,.tsx'",
@@ -29,6 +29,8 @@
     "prepublishOnly": "yarn lint && yarn typecheck && yarn format && yarn build"
   },
   "files": [
+    "index.js",
+    "index.d.ts",
     "dist/*",
     "package.json",
     "README.md"
@@ -51,7 +53,7 @@
     "husky": "^3.1.0",
     "jest": "^27.0.4",
     "lint-staged": "^9.4.2",
-    "npm-dts-webpack-plugin": "^1.1.10",
+    "npm-dts-webpack-plugin": "1.2.1",
     "prettier": "^1.18.2",
     "ts-jest": "^27.0.3",
     "typescript": "^3.7.4",
