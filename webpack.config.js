@@ -3,16 +3,17 @@ const NpmDtsPlugin = require('npm-dts-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: './lib/index.js',
+  entry: './dist/lib/index.js',
   output: {
-    filename: 'index.js',
+    filename: './dist/index.js',
     path: path.resolve(__dirname),
     library: 'base-module',
     libraryTarget: 'umd'
   },
   plugins: [
     new NpmDtsPlugin({
-      logLevel: 'warn'
+      logLevel: 'warn',
+      output: './dist/index.d.ts'
     })
   ]
 };
