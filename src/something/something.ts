@@ -1,3 +1,3 @@
-export const doSomething = (): string => {
-  return '';
+export const doSomething = (text: string): string => {
+  return text;
 };
