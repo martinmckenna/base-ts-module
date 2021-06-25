@@ -11,6 +11,6 @@ declare module 'my-package/something/something' {
 
 }
 declare module 'my-package' {
-  import main = require('my-package/index');
+  import main = require('my-package/index.ts');
   export = main;
 }
