@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "paths": {
+      "*": ["node_modules", "src/*"]
+    },
     "target": "esnext",
     "emitDeclarationOnly": true,
     "declaration": true,
@@ -10,12 +13,10 @@
     "strict": true,
     "baseUrl": ".",
     "noUnusedLocals": true,
-    "paths": {
-      "src/*": ["src/*"]
-    },
+    "resolveJsonModule": true,
     "plugins": [
       { "transform": "typescript-transform-paths", "afterDeclarations": true }
-    ],
+    ]
   },
   "include": [
     "src"

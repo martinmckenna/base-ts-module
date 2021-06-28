@@ -11,9 +11,7 @@
     "downlevelIteration": true,
     "esModuleInterop": true,
     "paths": {
-      "src/*": ["src/*"],
-      "my-package/*": ["../*"],
-      "*": ["node_modules/@types/*", "*"]
+      "*": ["node_modules/@types/*", "src/*"],
     }
   },
   "include": [
@@ -23,6 +21,6 @@
     "node_modules",
     "**/__tests__/*",
     "**/*.test.ts",
-    "**/*.spec.ts",
+    "**/*.spec.ts"
   ]
 }
