@@ -1,6 +1,10 @@
 const { pathsToModuleNameMapper } = require('ts-jest/utils');
 const config = require('./tsconfig.json');
 
+const remappedPaths = pathsToModuleNameMapper(config.compilerOptions.paths, {
+  prefix: '<rootDir>/'
+});
+
 module.exports = {
   transform: {
     '^.+\\.(t|j)sx?$': 'ts-jest'
@@ -11,7 +15,11 @@ module.exports = {
     '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  moduleNameMapper: pathsToModuleNameMapper(config.compilerOptions.paths, {
-    prefix: '<rootDir>/'
-  })
+  moduleNameMapper: Object.keys(remappedPaths).reduce((acc, key) => {
+    if (key === '^(.*)$') {
+      return acc;
+    }
+    acc[key] = remappedPaths[key];
+    return acc;
+  }, {})
 };
