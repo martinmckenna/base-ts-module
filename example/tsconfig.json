@@ -13,7 +13,7 @@
     "paths": {
       "src/*": ["src/*"],
       "my-package/*": ["../*"],
-      "*": ["node_modules/@types/*", "*"]
+      "*": ["node_modules/*", "*"]
     }
   },
   "include": [
@@ -23,6 +23,6 @@
     "node_modules",
     "**/__tests__/*",
     "**/*.test.ts",
-    "**/*.spec.ts",
+    "**/*.spec.ts"
   ]
 }
