@@ -1,1 +1,1 @@
-export declare const doSomething: (text: string) => string;
+export declare const doSomething: (name: string) => string;

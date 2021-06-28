@@ -1,5 +1,4 @@
 const path = require('path');
-const NpmDtsPlugin = require('npm-dts-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -14,11 +13,5 @@ module.exports = {
     contentBase: './dist',
     port: 8000
   },
-  devtool: 'inline-source-map',
-  plugins: [
-    new NpmDtsPlugin({
-      logLevel: 'warn',
-      entry: './dist/index.js'
-    })
-  ]
+  devtool: 'inline-source-map'
 };

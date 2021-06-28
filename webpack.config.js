@@ -1,5 +1,4 @@
 const path = require('path');
-const NpmDtsPlugin = require('npm-dts-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -9,11 +8,5 @@ module.exports = {
     path: path.resolve(__dirname),
     library: 'base-module',
     libraryTarget: 'umd'
-  },
-  plugins: [
-    new NpmDtsPlugin({
-      logLevel: 'warn',
-      entry: './dist/index.js'
-    })
-  ]
+  }
 };

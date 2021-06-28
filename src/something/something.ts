@@ -1,3 +1,3 @@
-export const doSomething = (text: string): string => {
-  return text;
+export const doSomething = (name: string): string => {
+  return `Hello ${name}`;
 };

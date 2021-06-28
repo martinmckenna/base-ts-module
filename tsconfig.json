@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "umd",
     "emitDeclarationOnly": true,
     "declaration": true,
     "outDir": "./dist",
@@ -22,9 +21,10 @@
     "src"
   ],
   "exclude": [
-    "**/node_modules",
+    "node_modules",
     "**/__tests__/*",
     "**/*.test.ts",
     "**/*.spec.ts",
+    "example"
   ]
 }
