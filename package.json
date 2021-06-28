@@ -20,13 +20,24 @@
     "handlebars": "^4.4.3"
   },
   "scripts": {
-    "start": "concurrently \"ttsc -w\" \"babel src --watch --out-dir ./dist --extensions '.ts,.tsx'\" \"webpack --watch --config webpack.dev.config.js\" -n 'tsc,babel,webpack' -k",
-    "build": "ttsc && babel src --out-dir ./dist --extensions '.ts,.tsx' && webpack",
+    "start": "run-p start:*",
+    "start:build-watch": "run-p build-watch:*",
+    "start:example": "cd example && npm run start",
+    "build": "run-s build:*",
+    "build:babel": "babel src --out-dir ./dist --extensions '.ts'",
+    "build-watch:babel": "babel src --watch --out-dir ./dist --extensions '.ts'",
+    "build:ts": "tsc",
+    "build-watch:ts": "tsc -w",
+    "build:webpack": "webpack",
+    "build-watch:webpack": "webpack --watch --config webpack.dev.config.js",
     "test": "jest --config jest.config.js",
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"src/**/*.js\"",
-    "lint": "eslint . --ext '.ts,.tsx'",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint src --ext '.ts'",
+    "lint:prettier": "prettier src/*.ts",
+    "lint-staged": "lint-staged",
     "typecheck": "tsc --noEmit true --emitDeclarationOnly false",
-    "prepublishOnly": "yarn lint && yarn typecheck && yarn format && yarn build"
+    "prepublishOnly": "run-s lint typecheck format build"
   },
   "files": [
     "index.js",
@@ -54,9 +65,9 @@
     "husky": "^3.1.0",
     "jest": "^27.0.4",
     "lint-staged": "^9.4.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "ts-jest": "^27.0.3",
-    "ttypescript": "^1.5.12",
     "typescript": "^3.7.4",
     "typescript-transform-paths": "^3.0.1",
     "webpack": "^5.40.0",
@@ -68,12 +79,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn typecheck"
+      "pre-commit": "run-s lint-staged typecheck"
     }
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
-      "eslint",
+      "eslint --fix",
       "prettier --write",
       "git add"
     ]
