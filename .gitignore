@@ -1,1 +1,11 @@
 node_modules
+
+# build output
+index.js
+dist
+
+# test output
+coverage
+
+# scratch
+.idea

@@ -1,1 +1,2 @@
-export * from 'src/something';
+// export {default as sum} from './sum';
+export * from './something';

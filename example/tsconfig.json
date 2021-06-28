@@ -11,9 +11,7 @@
     "downlevelIteration": true,
     "esModuleInterop": true,
     "paths": {
-      "src/*": ["src/*"],
-      "my-package/*": ["../*"],
-      "*": ["node_modules/@types/*", "*"]
+      "*": ["node_modules/@types/*", "src/*"],
     }
   },
   "include": [

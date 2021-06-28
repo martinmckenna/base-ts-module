@@ -14,6 +14,9 @@
     "typecheck": "tsc --noEmit true --emitDeclarationOnly false",
     "lint": "eslint . --ext '.ts,.tsx'"
   },
+  "dependencies": {
+    "my-package": "../"
+  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -44,7 +47,6 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && yarn typecheck"

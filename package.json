@@ -1,32 +1,20 @@
 {
-  "name": "marty-test",
-  "version": "0.0.1",
-  "homepage": "",
+  "name": "my-package",
+  "description": "sample package to doSomething",
   "repository": {
     "type": "git",
-    "directory": ""
+    "directory": "git://github.com/martinmckenna/base-ts-module.git"
   },
-  "engines": {
-    "node": ">= 16.3.0"
-  },
-  "description": "",
-  "author": "",
+  "author": "martinmckenna <mmckenna.phila@gmail.com>",
+  "contributors": [
+    "falieson <falieson@gmail.com>"
+  ],
   "license": "MIT",
   "private": false,
-  "main": "./index.js",
-  "types": "./dist/index.d.ts",
-  "unpkg": "./index.js",
-  "dependencies": {
-    "handlebars": "^4.4.3"
-  },
-  "scripts": {
-    "start": "concurrently \"ttsc -w\" \"babel src --watch --out-dir ./dist --extensions '.ts,.tsx'\" \"webpack --watch --config webpack.dev.config.js\" -n 'tsc,babel,webpack' -k",
-    "build": "ttsc && babel src --out-dir ./dist --extensions '.ts,.tsx' && webpack",
-    "test": "jest --config jest.config.js",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\" \"src/**/*.js\"",
-    "lint": "eslint . --ext '.ts,.tsx'",
-    "typecheck": "tsc --noEmit true --emitDeclarationOnly false",
-    "prepublishOnly": "yarn lint && yarn typecheck && yarn format && yarn build"
+  "version": "0.0.1",
+  "homepage": "",
+  "engines": {
+    "node": ">= 16.3.0"
   },
   "files": [
     "index.js",
@@ -35,6 +23,19 @@
     "package.json",
     "README.md"
   ],
+  "main": "./index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./index.js",
+  "scripts": {
+    "start": "concurrently \"tsc -w\" \"babel src --watch --out-dir ./dist --extensions '.ts,.tsx'\" \"webpack --watch --config webpack.dev.config.js\" -n 'tsc,babel,webpack' -k",
+    "build": "tsc && babel src --out-dir ./dist --extensions '.ts,.tsx' && webpack",
+    "test": "jest --config jest.config.js",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\" \"src/**/*.js\"",
+    "lint": "eslint . --ext '.ts,.tsx'",
+    "typecheck": "tsc --noEmit true --emitDeclarationOnly false",
+    "prepublishOnly": "yarn lint && yarn typecheck && yarn format && yarn build"
+  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
@@ -62,9 +63,6 @@
     "webpack": "^5.40.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
-  },
-  "resolutions": {
-    "handlebars": "^4.4.3"
   },
   "husky": {
     "hooks": {
