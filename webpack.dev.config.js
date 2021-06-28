@@ -17,7 +17,8 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new NpmDtsPlugin({
-      logLevel: 'warn'
+      logLevel: 'warn',
+      entry: './dist/index.js'
     })
   ]
 };

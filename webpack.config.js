@@ -12,7 +12,8 @@ module.exports = {
   },
   plugins: [
     new NpmDtsPlugin({
-      logLevel: 'warn'
+      logLevel: 'warn',
+      entry: './dist/index.js'
     })
   ]
 };

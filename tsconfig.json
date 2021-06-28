@@ -13,7 +13,10 @@
     "noUnusedLocals": true,
     "paths": {
       "src/*": ["src/*"]
-    }
+    },
+    "plugins": [
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ],
   },
   "include": [
     "src"
