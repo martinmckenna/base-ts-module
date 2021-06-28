@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "module": "es6",
+    "target": "es5",
+    "noEmit": true,
+    "jsx": "react",
+    "allowJs": true,
+    "baseUrl": ".",
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "paths": {
+      "*": ["node_modules/@types/*", "src/*"],
+    }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/__tests__/*",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+  ]
+}

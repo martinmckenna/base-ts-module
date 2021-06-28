@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
+    "paths": {
+      "*": ["node_modules", "src/*"]
+    },
     "target": "esnext",
-    "module": "umd",
     "emitDeclarationOnly": true,
     "declaration": true,
     "outDir": "./dist",
@@ -11,17 +13,19 @@
     "strict": true,
     "baseUrl": ".",
     "noUnusedLocals": true,
-    "paths": {
-      "src/*": ["src/*"]
-    }
+    "resolveJsonModule": true,
+    "plugins": [
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ]
   },
   "include": [
     "src"
   ],
   "exclude": [
-    "**/node_modules",
+    "node_modules",
     "**/__tests__/*",
     "**/*.test.ts",
     "**/*.spec.ts",
+    "example"
   ]
 }
