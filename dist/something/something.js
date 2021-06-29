@@ -16,11 +16,28 @@
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
-  _exports.doSomething = void 0;
+  _exports.init = _exports.doSomething = void 0;
 
   const doSomething = name => {
     return `Hello ${name}`;
   };
 
   _exports.doSomething = doSomething;
+
+  const init = () => {
+    let interceptor = null;
+    return {
+      setNewToken: token => {
+        if (interceptor) {
+          /* clear previously cached interceptor function */
+        }
+
+        interceptor = () => {
+          /* intercept all HTTP requests here with new token */
+        };
+      }
+    };
+  };
+
+  _exports.init = init;
 });

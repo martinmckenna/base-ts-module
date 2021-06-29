@@ -21,6 +21,8 @@
   },
   "scripts": {
     "start": "concurrently \"ttsc -w\" \"babel src --watch --out-dir ./dist --extensions '.ts,.tsx'\" \"webpack --watch --config webpack.dev.config.js\" -n 'tsc,babel,webpack' -k",
+    "install:all": "yarn && cd example && yarn",
+    "start:all": "concurrently \"yarn start\" \"cd example && yarn start\" -n 'module,website' -k",
     "build": "ttsc && babel src --out-dir ./dist --extensions '.ts,.tsx' && webpack",
     "test": "jest --config jest.config.js",
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"src/**/*.js\"",
