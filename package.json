@@ -25,9 +25,9 @@
     "start:all": "concurrently \"yarn start\" \"cd example && yarn start\" -n 'module,website' -k",
     "build": "ttsc && babel src --out-dir ./dist --extensions '.ts,.tsx' && webpack",
     "test": "jest --config jest.config.js",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\" \"src/**/*.js\" \"example/src/**/*.{ts,tsx}\" \"example/src/**/*.js\"",
     "lint": "eslint . --ext '.ts,.tsx'",
-    "typecheck": "tsc --noEmit true --emitDeclarationOnly false",
+    "typecheck": "ttsc --noEmit true --emitDeclarationOnly false",
     "prepublishOnly": "yarn lint && yarn typecheck && yarn format && yarn build"
   },
   "files": [
